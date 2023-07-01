@@ -5,6 +5,7 @@ camera1 = cv2.VideoCapture(0, cv2.CAP_DSHOW)
 camera2 = cv2.VideoCapture(1, cv2.CAP_DSHOW)
 
 def image_captures():
+    num = 0
     while True:
         ret1, frame1 = camera1.read()
         ret2, frame2 = camera2.read()
@@ -19,8 +20,9 @@ def image_captures():
         if cv2.waitKey(1) & 0xFF == ord('q'):
             break
         elif cv2.waitKey(1) & 0xFF == ord('c'):
-            cv2.imwrite('images/stereoLeft/imageL' + str(num) + '.png', img)
-            cv2.imwrite('images/stereoright/imageR' + str(num) + '.png', img2)
+            cv2.imwrite('images/stereoLeft/imageL' + str(num) + '.png', frame1)
+            cv2.imwrite('images/stereoright/imageR' + str(num) + '.png', frame2)
+            num += 1
             
 
     camera1.release()
