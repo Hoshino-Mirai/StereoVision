@@ -119,11 +119,8 @@ def calibration():
                 os.makedirs('chessBoards/right', exist_ok=True)
                 leftPath = os.path.join(current_dir, 'chessBoards', 'left', 'chessBoardsL' + str(num) + '.png')
                 rightPath = os.path.join(current_dir, 'chessBoards', 'right', 'chessBoardsR' + str(num) + '.png')
-
-                # save the images
                 cv2.imwrite(leftPath, imgL)
                 cv2.imwrite(rightPath, imgR)
-                
                 num += 1
                 
                 cv2.waitKey(1000)

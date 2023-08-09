@@ -48,7 +48,6 @@ with mp_facedetector.FaceDetection(min_detection_confidence=0.7) as face_detecti
             frame_right = cv2.cvtColor(frame_right, cv2.COLOR_RGB2BGR)
             frame_left = cv2.cvtColor(frame_left, cv2.COLOR_RGB2BGR)
 
-
             ################## CALCULATING DEPTH #########################################################
 
             center_right = 0
@@ -78,7 +77,7 @@ with mp_facedetector.FaceDetection(min_detection_confidence=0.7) as face_detecti
                 cv2.putText(frame_left, "TRACKING LOST", (75,50), cv2.FONT_HERSHEY_SIMPLEX, 1, (0,0,255),2)
 
             else:
-                depth = utils.find_depth(center_point_right, center_point_left, frame_right, frame_left, baseline, f, fov)
+                depth = utils.find_depth(center_point_right, center_point_left, frame_right, frame_left, baseline, fov)
 
                 cv2.putText(frame_right, "Distance: " + str(round(depth,1)), (50,50), cv2.FONT_HERSHEY_SIMPLEX, 1.2, (0,255,0),3)
                 cv2.putText(frame_left, "Distance: " + str(round(depth,1)), (50,50), cv2.FONT_HERSHEY_SIMPLEX, 1.2, (0,255,0),3)

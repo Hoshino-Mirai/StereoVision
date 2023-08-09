@@ -15,7 +15,7 @@ def undistort_rectify(frameR, frameL):
 
     return undistortedR, undistortedL
 
-def find_depth(right_point, left_point, frame_right, frame_left, baseline,f, fov):
+def find_depth(right_point, left_point, frame_right, frame_left, baseline, fov):
     
     # CONVERT FOCAL LENGTH f FROM [mm] TO [pixel]:
     _, width_right, _ = frame_right.shape
